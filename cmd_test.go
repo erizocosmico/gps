@@ -18,7 +18,7 @@ func TestMonitoredCmd(t *testing.T) {
 	cmd := mkTestCmd(2)
 	err := cmd.run()
 	if err != nil {
-		t.Error("expected command not to fail")
+		t.Errorf("expected command not to fail:", err)
 	}
 
 	expectedOutput := "foo\nfoo\n"
