@@ -8,8 +8,8 @@ dependencies:
     - wget https://github.com/Masterminds/glide/releases/download/0.10.1/glide-0.10.1-linux-amd64.tar.gz
     - tar -vxz -C $HOME/bin --strip=1 -f glide-0.10.1-linux-amd64.tar.gz
   override:
-    - glide --home $HOME/.glide -y glide.yaml install --cache
     - mkdir -p $RD
+    - glide --home $HOME/.glide -y glide.yaml install --cache
     - rsync -azC --delete ./ $RD
     #- ln -Tsf "$HOME/$CIRCLE_PROJECT_REPONAME" "$HOME/.go_workspace/src/$PROJECT_ROOT"
   cache_directories:
